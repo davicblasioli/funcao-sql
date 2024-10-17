@@ -1,0 +1,25 @@
+/* Atividade 1 */
+SELECT SUM(ESTOQUE) FROM MEDICAMENTOS m 
+
+/* Atividade 2 */
+SELECT AVG((CURRENT_DATE - DATA_NASCIMENTO)/365) FROM TUTOR t 
+
+/* Atividade 3 */
+SELECT MIN(preco) FROM MEDICAMENTOS m  
+
+/* Atividade 4 */
+SELECT MAX(peso) FROM PACIENTE p 
+
+/* Atividade 5 */
+SELECT COUNT(*) FROM TUTOR t 
+
+/* Atividade 6 */
+SELECT m.unidade, SUM(m.PRECO * m.ESTOQUE) AS valor_total
+FROM MEDICAMENTOS m
+GROUP BY m.UNIDADE 	
+
+/* Atividade 7 */
+SELECT i.ID_RECEITA, SUM(TOTAL_ITEM)
+FROM ITENSRECEITA i 
+GROUP BY i.ID_RECEITA 	
+HAVING SUM(i.TOTAL_ITEM) > 100
